@@ -6,7 +6,7 @@ public:
 
         int actual = 0;
         for (int x : nums) {
-            actual += x;
+            actual += x;             // basically sum of n natural numbers-actual sum 
         }
 
         return expected - actual;
