@@ -30,12 +30,11 @@ public:
             nums[i]=temp[i-low];
          }
     }
-    void mergesort(vector<int>&nums,int low,int high){
-        if (low >= high)return ;
-        int mid=low+(high-low)/2;
-        mergesort(nums,low,mid);
-        mergesort(nums,mid+1,high);
-        merge(nums,low,mid,high);
-    }
-    
+   void mergesort(vector<int>&nums, int low,int high ){
+   if(low>=high)return;
+   int mid=low+(high-low)/2;
+   mergesort(nums,low,mid);
+   mergesort(nums,mid+1,high);
+   merge(nums,low,mid,high);}
+
 };
