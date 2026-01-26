@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Merge two sorted lists
     ListNode* merge(ListNode* a, ListNode* b) {
         if (!a) return b;
         if (!b) return a;
@@ -13,20 +14,24 @@ public:
         }
     }
 
+    // Sort list using merge sort
     ListNode* sortList(ListNode* head) {
         if (!head || !head->next) return head;
 
         ListNode* slow = head;
         ListNode* fast = head->next;
 
+        // find middle
         while (fast && fast->next) {
             slow = slow->next;
             fast = fast->next->next;
         }
 
+        // split list
         ListNode* mid = slow->next;
         slow->next = nullptr;
 
+        // sort both halves and merge
         return merge(sortList(head), sortList(mid));
     }
 };
