@@ -8,7 +8,9 @@ public:
         if(hello.count(compliment)){
             return {hello[compliment],i};
         }
-        hello[nums[i]]=i;
+
+       else{ 
+        hello[nums[i]]=i;}
     }
         return{};
 
