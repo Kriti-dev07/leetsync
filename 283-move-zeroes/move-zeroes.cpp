@@ -1,18 +1,20 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        int idx = 0;
+        int idx=0;
+        int i=0;
+        while( i<= nums.size()-1){
+            if(nums[i]!=0){
+                nums[idx]=nums[i];
+                idx++;
 
-        // move non-zero elements forward
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] != 0) {                 // here we overwrite values but doesnt matter once loops reaches end of array we are done scanning and in the final array space left is filled by zeros
-                nums[idx++] = nums[i];
             }
-        }
+            i++;
 
-        // fill remaining positions with zero
-        while (idx < nums.size()) {
-            nums[idx++] = 0; // alternate way to write nums[idx]; idx++;
+        }
+        while(idx<=nums.size()-1){
+            nums[idx]=0;
+            idx++;
 
         }
     }
