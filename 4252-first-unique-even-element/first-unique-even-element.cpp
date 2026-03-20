@@ -1,16 +1,17 @@
 class Solution {
 public:
     int firstUniqueEven(vector<int>& nums) {
-   unordered_map<int,int> freq;
+        unordered_map<int,int> hello;
         for(int x:nums){
-            freq[x]++;
-            
+            hello[x]++;
         }
-        for(int x:nums){
-            if(x%2==0 && freq[x]==1){
-                return x;
+        for(int a:nums){
+            if(hello[a]==1 && a%2==0 ){
+                return a;
             }
+           
+
         }
-        return -1;
+         return -1;
     }
 };
