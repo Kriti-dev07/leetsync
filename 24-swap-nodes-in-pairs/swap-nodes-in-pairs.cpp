@@ -1,26 +1,23 @@
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-
-        if(!head || !head->next)
+        if (!head || !head->next) {
             return head;
-
-        ListNode* dummyNode = new ListNode(0, head); //creates a node named dummy and its value is 0 while its next is head 
-
-        ListNode* prevNode = dummyNode;        
-        ListNode* currNode = head;
-
-        while(currNode && currNode->next){  //currNode and currNode->next node exists 
-
-            prevNode->next = currNode->next;
-          
-            currNode->next = currNode->next->next;
-              prevNode->next->next = currNode;
-
-            prevNode = currNode;
-            currNode = currNode->next;
         }
 
-        return dummyNode->next;
+        ListNode* dummy = new ListNode(0, head);
+        ListNode* prev = dummy;
+        ListNode* curr = head;
+
+        while (curr && curr->next) {
+            prev->next = curr->next;              // step 1
+            curr->next = curr->next->next;        // step 2
+            prev->next->next = curr;              // step 3
+
+            prev = curr;                          // move prev
+            curr = curr->next;                    // move curr
+        }
+
+        return dummy->next;
     }
 };
