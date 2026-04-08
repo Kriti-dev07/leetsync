@@ -8,6 +8,6 @@ public:
             s += n % 10;
         }
 
-        return p - s;
+        return (p - s);
     }
 };
